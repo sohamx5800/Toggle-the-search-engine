@@ -1,0 +1,81 @@
+@import '~animate.css/animate.min.css';
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  min-height: 100vh;
+}
+
+body.dark {
+  background: #1e1e1e;
+  color: #fff;
+}
+
+body.light {
+  background: #fff;
+  color: #000;
+}
+
+.app-wrapper {
+  min-height: 100vh;
+}
+
+.tab-content {
+  min-height: 80vh;
+  transition: opacity 0.5s;
+}
+
+.tab-content.animate__fadeIn {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.results {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+a {
+  color: #1e90ff; /* Updated to light blue for consistency with ResultCard */
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #87CEEB; /* Lighter blue on hover for better feedback */
+}
+
+.search-section {
+  position: relative;
+  display: inline-block;
+}
+
+.search-section::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: linear-gradient(45deg, #00d4ff, #ff007a, #00d4ff);
+  background-size: 200%;
+  border-radius: 30px;
+  z-index: -1;
+  animation: neonGlow 3s linear infinite;
+  filter: blur(10px);
+  opacity: 0.7;
+}
+
+@keyframes neonGlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
